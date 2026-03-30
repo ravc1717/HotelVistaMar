@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Vista Mar</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+            background:#f5f5f5;
+        }
+
+        header{
+            background:#3498db;
+            padding:15px 20px;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        nav{
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+            padding:8px 12px;
+            border-radius:5px;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            background:#2980b9;
+        }
+
+        .hero{
+            text-align:center;
+            padding:70px 20px;
+            background:url('/img/hero.jpeg') center/cover no-repeat;
+            color:white;
+        }
+
+        .hero h1{
+            font-size:48px;
+            margin-bottom:15px;
+            text-shadow:2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero p{
+            font-size:20px;
+            margin-bottom:30px;
+            text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero-buttons{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:12px;
+        }
+
+        .hero-buttons a{
+            text-decoration:none;
+            color:white;
+            background:#3498db;
+            padding:12px 24px;
+            border-radius:8px;
+            font-size:16px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .hero-buttons a:hover{
+            background:#2980b9;
+            transform:translateY(-2px);
+        }
+
+        .admin-btn{
+            background:#e67e22 !important;
+        }
+
+        .admin-btn:hover{
+            background:#d35400 !important;
+        }
+
+        section{
+            padding:50px 20px;
+        }
+
+        section h2{
+            text-align:center;
+            color:#2c3e50;
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            text-align:center;
+            font-size:18px;
+            color:#555;
+            margin-bottom:30px;
+        }
+
+        .cards{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .card{
+            width:260px;
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card img{
+            width:100%;
+            height:170px;
+            object-fit:cover;
+        }
+
+        .card-body{
+            padding:15px;
+            text-align:center;
+        }
+
+        .card-body h3{
+            margin:0 0 10px;
+        }
+
+        .price{
+            color:#e74c3c;
+            font-weight:bold;
+            font-size:18px;
+        }
+
+        .gallery{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:12px;
+        }
+
+        .gallery img{
+            width:220px;
+            height:150px;
+            object-fit:cover;
+            border-radius:8px;
+            transition:0.3s;
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        .services{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:15px;
+        }
+
+        .service{
+            background:#3498db;
+            color:white;
+            padding:15px 20px;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        .contact{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:40px;
+            margin-top:30px;
+        }
+
+        .contact-info{
+            max-width:300px;
+        }
+
+        .contact-info p{
+            margin:10px 0;
+        }
+
+        .form{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+            width:300px;
+        }
+
+        .form input,
+        .form textarea{
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        .form button{
+            padding:12px;
+            border:none;
+            border-radius:5px;
+            background:#3498db;
+            color:white;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .form button:hover{
+            background:#2980b9;
+        }
+
+        .reserve-link{
+            display:inline-block;
+            margin-top:15px;
+            padding:12px 20px;
+            background:#e67e22;
+            color:white;
+            border-radius:5px;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .reserve-link:hover{
+            background:#d35400;
+        }
+
+        footer{
+            background:#2c3e50;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Hotel Vista Mar</div>
+
+    <nav>
+        <a href="#habitaciones">Habitaciones</a>
+        <a href="/habitaciones">Gestionar Habitaciones</a>
+        <a href="/usuarios">Usuarios</a>
+        <a href="/reservas">Reservas</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Bienvenido a Hotel Vista Mar</h1>
+    <p>Comodidad, descanso y la mejor experiencia para tu estadía</p>
+
+    <div class="hero-buttons">
+        <a href="#habitaciones">Ver Habitaciones</a>
+        <a href="/habitaciones">Gestionar Habitaciones</a>
+        <a href="/usuarios" class="admin-btn">Gestionar Usuarios</a>
+        <a href="/reservas" class="admin-btn">Ver Reservas</a>
+        <a href="/reservas/nueva" class="admin-btn">Reservar Ahora</a>
+        <a href="#galeria">Ver Fotos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+</section>
+
+<section id="habitaciones">
+    <h2>Habitaciones</h2>
+    <p class="subtitle">Elige la habitación ideal para ti</p>
+
+    <div class="cards">
+        <div class="card">
+            <img src="/img/hab1.jpeg" alt="Habitación Estándar">
+            <div class="card-body">
+                <h3>Habitación Estándar</h3>
+                <span class="price">$45 / noche</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/img/hab2.jpeg" alt="Habitación Doble">
+            <div class="card-body">
+                <h3>Habitación Doble</h3>
+                <span class="price">$65 / noche</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/img/hab3.jpeg" alt="Suite">
+            <div class="card-body">
+                <h3>Suite</h3>
+                <span class="price">$95 / noche</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="galeria">
+    <h2>Galería</h2>
+    <p class="subtitle">Conoce nuestras instalaciones</p>
+
+    <div class="gallery">
+        <img src="/img/g1.jpeg" alt="Galería 1">
+        <img src="/img/g2.jpeg" alt="Galería 2">
+        <img src="/img/g3.jpeg" alt="Galería 3">
+        <img src="/img/g4.jpeg" alt="Galería 4">
+        <img src="/img/g5.jpeg" alt="Galería 5">
+        <img src="/img/g6.jpeg" alt="Galería 6">
+        <img src="/img/g7.jpeg" alt="Galería 7">
+        <img src="/img/g8.jpeg" alt="Galería 8">
+    </div>
+</section>
+
+<section id="servicios">
+    <h2>Servicios</h2>
+    <p class="subtitle">Todo lo que necesitas durante tu estadía</p>
+
+    <div class="services">
+        <div class="service">WiFi Gratis</div>
+        <div class="service">Desayuno Incluido</div>
+        <div class="service">Parqueo Privado</div>
+        <div class="service">Piscina</div>
+        <div class="service">Limpieza Diaria</div>
+        <div class="service">Atención 24/7</div>
+    </div>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p class="subtitle">Reserva o solicita información</p>
+
+    <div class="contact">
+        <div class="contact-info">
+            <p><strong>Dirección:</strong> San Salvador, El Salvador</p>
+            <p><strong>Teléfono:</strong> 7986-9187</p>
+            <p><strong>Email:</strong> hotel@vistamar.com</p>
+            <p><strong>Atención:</strong> 24/7</p>
+
+            <a href="/reservas/nueva" class="reserve-link">
+                Reservar Ahora
+            </a>
+        </div>
+
+        <form class="form">
+            <input type="text" placeholder="Nombre">
+            <input type="email" placeholder="Correo">
+            <textarea rows="4" placeholder="Mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Hotel Vista Mar - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

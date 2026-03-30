@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario Habitación</title>
+</head>
+<body>
+    <h1>Habitación</h1>
+
+    <form th:action="@{/habitaciones/guardar}" th:object="${habitacion}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Número:</label>
+        <input type="text" th:field="*{numero}"><br><br>
+
+        <label>Tipo:</label>
+        <input type="text" th:field="*{tipo}"><br><br>
+
+        <label>Precio:</label>
+        <input type="number" step="0.01" th:field="*{precio}"><br><br>
+
+        <label>Estado:</label>
+        <input type="text" th:field="*{estado}"><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <br>
+    <a href="/habitaciones">Volver</a>
+</body>
+</html>
